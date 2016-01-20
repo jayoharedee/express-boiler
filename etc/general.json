@@ -7,7 +7,7 @@
     "engine": {
         "views": {
             "path": "/usr/views",
-            "engine": "jade"
+            "engine": "ejs"
         }
     }
 }
