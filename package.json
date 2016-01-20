@@ -17,6 +17,10 @@
     "express": "^4.13.3",
     "express-validator": "^2.18.0",
     "file-stream-rotator": "0.0.6",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.6",
     "helmet": "^1.1.0",
     "morgan": "^1.6.1"
   }
