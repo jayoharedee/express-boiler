@@ -22,12 +22,15 @@ require('./lib/config')(app);
 
 
 //routes
-app.get('/', (req, res) => {
-    res.json({
-        status: 'success',
-        data: null,
-        message: 'Welcome to the site'
-    })
+// app.get('/', (req, res) => {
+//     res.json({
+//         status: 'success',
+//         data: null,
+//         message: 'Welcome to the site'
+//     })
+// })
+app.get('/', (req, res, next) => {
+    return res.render('index', {title: 'Express Boiler'})
 })
 
 require('./lib/routes')(app)
