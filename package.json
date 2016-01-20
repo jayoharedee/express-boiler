@@ -4,6 +4,7 @@
   "description": "boilerplate used to help get express projects started",
   "main": "index.js",
   "scripts": {
+    "start": "set NODE_ENV=production && set NODE_PATH=lib && nodemon bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

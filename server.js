@@ -16,15 +16,21 @@ app.use(bodyParser.urlencoded({
 
 app.use(expressValidator())
 
+
 // configs 
 require('./lib/config')(app);
+
+
 //routes
+app.get('/', (req, res) => {
+    res.json({
+        status: 'success',
+        data: null,
+        message: 'Welcome to the site'
+    })
+})
 
-
-// include main route here 'app.use('/')
-//
-// include routing here or app will break
-require('./lib')(app)
+require('./lib/routes')(app)
 
 
 // 404's
