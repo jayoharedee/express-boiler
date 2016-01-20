@@ -1,0 +1,22 @@
+{
+  "name": "express-boiler",
+  "version": "1.0.0",
+  "description": "boilerplate used to help get express projects started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "chalk": "^1.1.1",
+    "cluster": "^0.7.7",
+    "confus": "0.0.1",
+    "express": "^4.13.3",
+    "express-validator": "^2.18.0",
+    "file-stream-rotator": "0.0.6",
+    "helmet": "^1.1.0",
+    "morgan": "^1.6.1"
+  }
+}
