@@ -6,7 +6,6 @@ const app              = express()
 const expressValidator = require('express-validator')
 const bodyParser       = require('body-parser')
 const help             = require('./lib/helpers')
-const util             = require('./lib/helpers/utils.js')
 
 // MIDDLEWARE ===========================
 app.use(bodyParser.json())
@@ -17,18 +16,11 @@ app.use(bodyParser.urlencoded({
 app.use(expressValidator())
 
 
-// configs 
-require('./lib/config')(app);
+// configs
+require('./lib/config')(app)
 
 
-//routes
-// app.get('/', (req, res) => {
-//     res.json({
-//         status: 'success',
-//         data: null,
-//         message: 'Welcome to the site'
-//     })
-// })
+// ROUTES ===============================
 app.get('/', (req, res, next) => {
     return res.render('index', {title: 'Express Boiler'})
 })
