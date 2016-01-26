@@ -31,4 +31,4 @@ gulp.task('livereload', ['lint', 'start'], () => {
     gulp.watch(['usr/views/*.ejs']).on('change', livereload.changed)
 })
 
-gulp.task('default', ['lint', 'start', 'livereload'], () => {})
+gulp.task('default', ['lint', 'start', 'livereload'])
