@@ -1,0 +1,29 @@
+{
+    "name"        : "express-boiler",
+    "script"      : "bin/www",
+    "args"        : ["--env development"],
+    "watch"       : true,
+    "node_args"   : "--harmony",
+    "merge_logs"  : false,
+    "cwd"         : "",
+    "exec_mode"   : "cluster",
+    "error_file"  : "logs/child-err.log",
+    "out_file"    : "logs/child-out.log",
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+    "instances"        : 6,
+    "max_memory_reset" : "100M",
+    "ignore_watch"     : ["node_modules"],
+    "exec_interpreter" : "node",
+    "autorestart"      : true,
+    "env": {
+          "NODE_ENV": "development",
+          "AWESOME_SERVICE_API_TOKEN": "xxx"
+        },
+        "env_production" : {
+           "NODE_ENV": "production"
+        },
+        "env_staging" : {
+           "NODE_ENV" : "staging",
+           "TEST"     : true
+        }
+}
