@@ -2,45 +2,32 @@
 
 'use strict'
 
-const cluster = require('cluster')
-const confus  = require('confus')
-const lodash  = require('lodash')
-const chalk   = require('chalk')
 const util    = require('util')
 const http    = require('http')
-const os      = require('os')
-
 const app     = require('../server')
-const utils   = require('../lib/helpers/utils.js')
 
-confus.at('development', () => {
-    spawnWorker()
+const port = app.settings.server.port
+const server = http.createServer(app)
+
+server.listen(port)
+server.on('error', (err) => {
+    if (err.syscall !== 'listen') { throw err }
+
+    switch (err.code) {
+    case 'EACCES':
+        console.error(util.format('[!] %d requires elevated privileges', port))
+        process.exit(1)
+        break
+
+    case 'EADDRINUSE':
+        console.error(util.format('[!] %d is already in use', port))
+        process.exit(1)
+        break
+
+    default:
+        throw err
+    }
 })
-
-confus.at('production', () => {
-    if(cluster.isMaster) { master()  }
-    if(cluster.isWorker) { spawnWorker()  }
+server.on('listening', () => {
+    console.log(util.format('[+] listening on %', port))
 })
-
-function spawnWorker() {
-    const port = app.settings.server.port
-
-    app.server = http.createServer(app)
-    app.server.listen(port, () => {
-        utils.success(util.format('[+] listening on %d', port))
-    })
-}
-
-function master() {
-    lodash.forEach(os.cpus(), () => {
-        cluster.fork()
-    })
-
-    cluster.on('fork', (worker) => {
-        utils.success('[+] forked worker', worker.id)
-    })
-
-    cluster.on('exit', (worker) => {
-        utils.success('[-] exited worker', worker.id)
-    })
-}
