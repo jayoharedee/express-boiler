@@ -1,5 +1,5 @@
 {
-    "name"        : "express-boiler",
+    "name"        : "boiler",
     "script"      : "bin/www",
     "args"        : ["--env development"],
     "watch"       : true,
