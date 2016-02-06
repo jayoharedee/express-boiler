@@ -10,7 +10,7 @@
     "error_file"  : "logs/child-err.log",
     "out_file"    : "logs/child-out.log",
     "log_date_format"  : "YYYY-MM-DD HH:mm Z",
-    "instances"        : 6,
+    "instances"        : 1,
     "max_memory_reset" : "100M",
     "ignore_watch"     : ["node_modules"],
     "exec_interpreter" : "node",
