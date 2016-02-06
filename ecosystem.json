@@ -9,7 +9,7 @@
     "exec_mode"   : "cluster",
     "merge_logs"      : true,
     "log_date_format"  : "YYYY-MM-DD HH:mm Z",
-    "instances"        : 1,
+    "instances"        : 6,
     "max_memory_reset" : "100M",
     "ignore_watch"     : ["node_modules"],
     "exec_interpreter" : "node",
