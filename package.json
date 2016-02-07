@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp && pm2 start ecosystem.json --env production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "chai": "^3.5.0",
     "chalk": "^1.1.1",
     "confus": "0.0.1",
     "ejs": "^2.3.4",
@@ -23,8 +24,11 @@
     "gulp-sass": "^2.2.0",
     "helmet": "^1.1.0",
     "lodash": "^4.0.0",
+    "mocha": "^2.4.5",
     "morgan": "^1.6.1",
     "pm2": "^1.0.0",
-    "sass": "^0.5.0"
+    "request": "^2.69.0",
+    "sass": "^0.5.0",
+    "supertest": "^1.1.0"
   }
 }
