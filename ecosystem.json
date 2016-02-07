@@ -1,9 +1,9 @@
 {
     "name"        : "boiler",
     "script"      : "bin/www",
-    "args"        : ["--env production"],
+    "args"        : "--env production",
     "watch"       : true,
-    "node_args"   : "--harmony",
+    "node_args"   : "",
     "merge_logs"  : false,
     "cwd"         : "",
     "exec_mode"   : "cluster",
@@ -11,7 +11,7 @@
     "log_date_format"  : "YYYY-MM-DD HH:mm Z",
     "instances"        : 6,
     "max_memory_reset" : "100M",
-    "ignore_watch"     : ["node_modules"],
+    "ignore_watch"     : ["node_modules", "logs"],
     "exec_interpreter" : "node",
     "autorestart"      : true,
     "env": {
