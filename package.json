@@ -4,7 +4,7 @@
   "description": "boilerplate used to help get express projects started",
   "main": "index.js",
   "scripts": {
-    "start": "gulp && pm2 start ecosystem.json --env production",
+    "start": "npm test && gulp && pm2 start ecosystem.json --env production",
     "test": "mocha test"
   },
   "author": "",
