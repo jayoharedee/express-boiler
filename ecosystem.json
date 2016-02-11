@@ -6,9 +6,9 @@
             "script": "bin/www",
             "instances": 4,
             "exec_mode"  : "cluster_mode",
-            "error_file": "err.log",
-            "out_file": "out.log",
-            "out_file": "out-env.log",
+            "error_file": "logs/pm2/err/err.log",
+            "out_file": "logs/pm2/out/out.log",
+            "out_file": "logs/pm2/out/out-env.log",
             "merge-logs": true,
             "watch": true,
             "autorestart": true,
@@ -25,6 +25,14 @@
             "ref": "origin/master",
             "repo": "git@github.com:jayoharedee/express-boiler.git",
             "path": " /var/www/boiler",
+            "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
+        },
+        "development": {
+            "user": "dev",
+            "host": "0.0.0.0",
+            "ref": "origin/master",
+            "repo": "git@github.com:jayoharedee/express-boiler.git",
+            "path": " /Users/dev/dev/express-boiler",
             "post-deploy": "sudo npm install && sudo pm2 startOrRestart ecosystem.json --env production"
         }
     }
