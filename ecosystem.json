@@ -4,6 +4,7 @@
         {
             "name": "boiler",
             "script": "bin/www",
+            "node_args": "--harmony",
             "instances": 4,
             "exec_mode"  : "cluster_mode",
             "error_file": "logs/pm2/err/err.log",
