@@ -11,7 +11,6 @@
             "out_file": "logs/pm2/out/out.log",
             "out_file": "logs/pm2/out/out-env.log",
             "merge-logs": true,
-            "watch": true,
             "autorestart": true,
             "env_production": {
                 "NODE_ENV": "production"
